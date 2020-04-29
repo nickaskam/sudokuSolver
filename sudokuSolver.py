@@ -1,15 +1,16 @@
 import numpy as np
 
-grid = [[5,3,0,0,7,0,0,0,0],
-        [6,0,0,0,1,9,5,0,0],
-        [0,9,8,0,0,0,0,6,0],
-        [8,0,0,0,6,0,0,0,3],
-        [4,0,0,8,0,3,0,0,1],
-        [7,0,0,0,2,0,0,0,6],
-        [0,6,0,0,0,0,2,8,0],
-        [0,0,0,4,1,9,0,0,5],
-        [0,0,0,0,8,0,0,7,9]]
+grid = [[0,9,0,3,0,0,0,7,0],
+        [0,5,3,4,0,9,0,0,0],
+        [0,0,2,0,0,0,0,5,0],
+        [0,0,0,2,0,0,0,0,0],
+        [2,0,0,1,0,0,6,4,0],
+        [0,0,4,5,0,0,0,1,2],
+        [0,3,6,0,0,0,4,0,5],
+        [0,0,0,9,0,0,0,0,0],
+        [1,0,0,0,0,8,0,0,0]]
 
+print("Entered Grid:")
 print(np.matrix(grid))
 
 def possible(y,x,n):
@@ -28,8 +29,19 @@ def possible(y,x,n):
                 return False
     return True
 
-print("Is the middle square 3? " + str(possible(4,4,3)))
-print("Is the middle square 5? " + str(possible(4,4,5)))
+#test conditions
+# print("Is the middle square 3? " + str(possible(4,4,3)))
+# print("Is the middle square 5? " + str(possible(4,4,5)))
+
+# print(0//3*3)
+# print(1//3*3)
+# print(2//3*3)
+# print(3//3*3)
+# print(4//3*3)
+# print(5//3*3)
+# print(6//3*3)
+# print(7//3*3)
+# print(8//3*3)
 
 def solve():
     global grid
@@ -43,6 +55,7 @@ def solve():
                         grid[y][x] = 0
                 return 
     print(np.matrix(grid))
-    input("More?")
 
+
+print("Solution")
 solve()
