@@ -30,3 +30,19 @@ def possible(y,x,n):
 
 print("Is the middle square 3? " + str(possible(4,4,3)))
 print("Is the middle square 5? " + str(possible(4,4,5)))
+
+def solve():
+    global grid
+    for y in range(9):
+        for x in range(9):
+            if grid[y][x] == 0:
+                for n in range(1,10):
+                    if possible(y,x,n):
+                        grid[y][x] = n
+                        solve()
+                        grid[y][x] = 0
+                return 
+    print(np.matrix(grid))
+    input("More?")
+
+solve()
